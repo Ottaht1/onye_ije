@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Onye Ije — Explore the world</title>
+    <meta
+      name="description"
+      content="Onye Ije – Explore the world and enjoy its beauty."
+    />
+    <meta
+      name="keywords"
+      content="travel, booking, hotels, flights, explore, adventure, vacation, Onye Ije"
+    />
+    <link rel="canonical" href="https://onyeije.com/" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Styles (original + enhancements) -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <svg aria-hidden="true" viewBox="0 0 48 48" width="40" height="40">
+            <rect width="48" height="48" rx="12" fill="#e6f7fb" />
+            <path
+              d="M12 30c6-10 12-10 20-14"
+              stroke="#26b4db"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="36" cy="12" r="2.6" fill="#26b4db" />
+          </svg>
+          <span class="brand-name">Onye Ije</span>
+        </div>
+
+        <!-- CSS-only nav toggle (checkbox) -->
+        <input
+          id="navToggle"
+          class="nav-toggle"
+          type="checkbox"
+          aria-label="Toggle navigation"
+        />
+        <label for="navToggle" class="menu-toggle"
+          ><i class="fa fa-bars" aria-hidden="true"></i
+        ></label>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#popular" class="nav-link">Explore</a>
+          <a href="#discover" class="nav-link">Discover</a>
+          <a href="#book" class="nav-link">Book</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="signin" href="#">Sign in</a>
+          <a class="btn-primary" href="#">Sign up</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1>
+              Explore the whole world<br /><span class="accent"
+                >and enjoy its beauty</span
+              >
+            </h1>
+            <p class="lead">
+              Find and write about your experiences around the world.
+            </p>
+
+            <!-- Search / Tabs -->
+            <div class="search-panel" aria-label="Search panel">
+              <div class="tabs" role="tablist" aria-label="Search Tabs">
+                <button class="tab active" data-tab="hostelry" role="tab">
+                  Hostelry
+                </button>
+                <button class="tab" data-tab="flights" role="tab">
+                  Flights
+                </button>
+                <button class="tab" data-tab="bus" role="tab">
+                  Bus &amp; Shuttle
+                </button>
+                <button class="tab" data-tab="cars" role="tab">Cars</button>
+              </div>
+
+              <form id="searchForm" class="search-card" role="search">
+                <!-- shared controls -->
+                <input
+                  name="destination"
+                  type="text"
+                  placeholder="Destination (e.g., Bali, Indonesia)"
+                  aria-label="Destination"
+                />
+                <input name="checkin" type="date" aria-label="Check-in" />
+                <input name="checkout" type="date" aria-label="Check-out" />
+                <select name="guests" aria-label="Rooms and guests">
+                  <option>1 Room, 2 Guests</option>
+                  <option>2 Rooms, 4 Guests</option>
+                </select>
+                <button type="submit" class="btn-primary" aria-label="Search">
+                  Search
+                </button>
+              </form>
+
+              <div
+                id="searchResult"
+                class="search-result visually-hidden"
+                aria-live="polite"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Hero visual card (right) -->
+          <aside class="hero-card" aria-hidden="true">
+            <!-- provide a visible background but also a hidden descriptive image for screen readers -->
+            <div
+              class="hero-thumb"
+              style="
+                background-image: url('/mnt/data/IMG_0216.jpeg'),
+                  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60');
+              "
+            >
+              <!-- decorative visible background; add real <img> for accessibility (hidden offscreen) -->
+              <img
+                src="/mnt/data/IMG_0216.jpeg"
+                alt="Beach and palm trees in Bali, Indonesia"
+                class="visually-hidden"
+              />
+            </div>
+            <div class="hero-card-body">
+              <h4>Bali, Indonesia</h4>
+              <p class="muted">3 nights · 2 guests</p>
+              <div class="stars" aria-hidden="true">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- POPULAR -->
+      <section id="popular" class="section container">
+        <div class="section-head">
+          <div>
+            <h2>Popular Places</h2>
+            <p class="muted">Let's enjoy this heaven on earth</p>
+          </div>
+          <div>
+            <button class="btn-outline" aria-label="View all popular places">
+              View all
+            </button>
+          </div>
+        </div>
+
+        <div class="grid cards">
+          <!-- card x4 (now using <img> for accessibility + lazy loading) -->
+          <article class="place-card">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=60"
+              alt="Mindanao coastline"
+              class="place-media--img"
+            />
+            <div class="place-body">
+              <h3 class="card-title">SC. Mindanao</h3>
+              <p class="muted">Mindanao, Philippines</p>
+              <div class="tag">20% OFF</div>
+            </div>
+          </article>
+
+          <article class="place-card">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1549893074-0d8c1d9a7a67?auto=format&fit=crop&w=900&q=60"
+              alt="Disneyland Tokyo entrance"
+              class="place-media--img"
+            />
+            <div class="place-body">
+              <h3 class="card-title">Disneyland Tokyo</h3>
+              <p class="muted">Tokyo, Japan</p>
+              <div class="tag">20% OFF</div>
+            </div>
+          </article>
+
+          <article class="place-card">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?auto=format&fit=crop&w=900&q=60"
+              alt="Thousand Islands beach"
+              class="place-media--img"
+            />
+            <div class="place-body">
+              <h3 class="card-title">Tousand Island</h3>
+              <p class="muted">Java, Indonesia</p>
+              <div class="tag">20% OFF</div>
+            </div>
+          </article>
+
+          <article class="place-card">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=60"
+              alt="Basilika Santo cathedral"
+              class="place-media--img"
+            />
+            <div class="place-body">
+              <h3 class="card-title">Basilika Santo</h3>
+              <p class="muted">Venice, Italy</p>
+              <div class="tag">20% OFF</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- DISCOVER (feature + big visual) -->
+      <section id="discover" class="section container">
+        <div class="feature">
+          <div class="feature-list">
+            <div class="feature-item">
+              <span class="num">01</span>
+              <div>
+                <h4>Find trips that fit your freedom</h4>
+                <p class="muted">
+                  Travelling offers freedom and flexibility, solitude and
+                  spontaneity.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <span class="num">02</span>
+              <div>
+                <h4>Get back to nature by travel</h4>
+                <p class="muted">
+                  Explore Mother Nature’s irresistible corners.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <span class="num">03</span>
+              <div>
+                <h4>Reignite your travel tastebuds</h4>
+                <p class="muted">
+                  Taste amazing local foods and cultural experiences.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-visual" aria-hidden="true">
+            <div
+              class="visual-card"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60');
+              "
+            >
+              <!-- for accessibility, provide hidden description -->
+              <img
+                loading="lazy"
+                src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60"
+                alt="Scenic cliffside travel photo"
+                class="visually-hidden"
+              />
+              <div class="visual-bubble">
+                Kamelia Diana <span class="rating">4.9</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOOK / Explore more -->
+      <section id="book" class="section container">
+        <div class="section-head">
+          <div>
+            <h2>Explore more</h2>
+            <p class="muted">Let's go on an adventure</p>
+          </div>
+        </div>
+
+        <div class="grid explore-grid">
+          <article class="explore-card">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=60"
+              alt="Amalfi Coast cliffs"
+              class="thumb--img"
+            />
+            <div class="meta">
+              <div>
+                <strong>Amalfi Coast</strong>
+                <div class="muted">Amalfi, Italy</div>
+              </div>
+              <div class="price">$148</div>
+            </div>
+          </article>
+
+          <article class="explore-card">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=60"
+              alt="Taj Mahal at sunrise"
+              class="thumb--img"
+            />
+            <div class="meta">
+              <div>
+                <strong>Taj Mahal</strong>
+                <div class="muted">Agra, India</div>
+              </div>
+              <div class="price">$140</div>
+            </div>
+          </article>
+
+          <article class="explore-card">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=900&q=60"
+              alt="Tanah Gajah rice terraces"
+              class="thumb--img"
+            />
+            <div class="meta">
+              <div>
+                <strong>Tanah Gajah</strong>
+                <div class="muted">Bali, Indonesia</div>
+              </div>
+              <div class="price">$148</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="center" style="margin-top: 22px">
+          <button class="btn-primary" id="bookNow" aria-label="Book now">
+            Book now
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Onye Ije</strong>
+          <div class="muted">
+            30 Great Peter St, Westminster, London, SW1P 2DW
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div>
+            <strong>Company</strong>
+            <div class="muted">About · Careers · Blog</div>
+          </div>
+          <div>
+            <strong>Support</strong>
+            <div class="muted">Help center · Feedback · Contact</div>
+          </div>
+        </div>
+
+        <div class="newsletter">
+          <strong>Newsletter</strong>
+          <div class="muted">Subscribe for travel inspiration & deals.</div>
+          <form
+            class="newsletter-form"
+            action="#"
+            method="post"
+            aria-label="Subscribe to newsletter"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              aria-label="Email address for newsletter"
+            />
+            <button
+              class="btn-primary"
+              type="submit"
+              aria-label="Subscribe to newsletter"
+            >
+              Subscribe
+            </button>
+          </form>
+          <div class="socials" aria-label="Social links">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook" aria-hidden="true"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram" aria-hidden="true"></i
+            ></a>
+            <a href="#" aria-label="Twitter"
+              ><i class="fab fa-twitter" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
